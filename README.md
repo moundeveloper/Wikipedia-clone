@@ -1,3 +1,8 @@
+# Initial setup
+
+Make sure to have the wikipedia webscraper api on your machine you can find it in the other repository "Wikipedia Webscraper"
+Start the development server on running on http://localhost:3000
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
@@ -19,7 +24,7 @@ pnpm install
 
 ## Development Server
 
-Start the development server on http://localhost:3000
+Start the development server on http://localhost:4000
 
 ```bash
 npm run dev
