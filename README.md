@@ -14,7 +14,7 @@ In short, the new Wikipedia rebrand website is the perfect blend of form and fun
 
 # Initial setup
 
-Make sure to have the wikipedia webscraper api on your machine you can find it in the other repository "Wikipedia Webscraper"
+Make sure to have the wikipedia webscraper api on your machine you can find it in the folder "Wikipedia Webscraper"
 Start the development server on http://localhost:3000
 
 # Nuxt 3 Minimal Starter
