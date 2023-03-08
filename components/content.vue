@@ -4,6 +4,27 @@ const unsplashImgs = ref({})
 const route = useRoute()
 const runtime = useRuntimeConfig()
 
+if (process.client) {
+    const historyItems = JSON.parse(localStorage.getItem("history"))
+    console.log(historyItems)
+    const itemToUpdate = historyItems.findIndex(item => route.params.search_topic.toLowerCase() === item.topic.toLowerCase())
+    console.log(itemToUpdate)
+    if (itemToUpdate > -1) {
+        historyItems[itemToUpdate].lastSearch = new Date().toLocaleString()
+        historyItems[itemToUpdate].visits += 1
+    } else {
+        historyItems.push({
+            topic: route.params.search_topic,
+            lastSearch: new Date().toLocaleString(),
+            visits: 1
+        })
+    }
+
+    localStorage.setItem("history", JSON.stringify(historyItems))
+
+}
+
+
 const contentData = await useFetch(`${runtime.public.baseUrl}?search_topic=${route.params.search_topic}`).then((res) => res.data)
     .catch((error) => console.error(error));
 const imgData = await useFetch(`${runtime.public.baseUrl}/img?search_topic=${route.params.search_topic}`).then((res) => res.data)

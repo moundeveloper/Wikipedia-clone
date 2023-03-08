@@ -17,9 +17,7 @@ const wikiSearchResultsLength = ref(wikiSearchResults.value.length)
         <h1>Risultati per {{ props.searchTopic }} : {{ wikiSearchResultsLength }} </h1>
 
         <div class="results" v-if="wikiSearchResultsLength">
-            <p v-for="item in wikiSearchResults">
-                <NuxtLink class="topic-link" :to="`/result/${item}`">{{ item }}</NuxtLink>
-            </p>
+            <NuxtLink v-for="item in wikiSearchResults" class="topic-link" :to="`/result/${item}`">{{ item }}</NuxtLink>
         </div>
         <div v-else class="fallback">
             <img src="https://em-content.zobj.net/source/microsoft-teams/337/ghost_1f47b.png" alt="">
@@ -52,13 +50,6 @@ h1 {
     margin: 1rem 0;
 }
 
-p {
-    padding: .5rem 1rem;
-    border-radius: .5rem;
-    border: 1px solid var(--secondary-color);
-    width: fit-content;
-    cursor: pointer;
-}
 
 .fallback {
     display: flex;
@@ -76,15 +67,17 @@ p {
 .topic-link {
     text-decoration: none;
     color: var(--secondary-color);
+    border-radius: .5rem;
+    border: 1px solid var(--secondary-color);
+    width: fit-content;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    transition: color, background-color .5s;
 }
 
-p:hover {
+.topic-link:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
-}
-
-p:hover .topic-link {
-    color: var(--primary-color)
 }
 
 span {

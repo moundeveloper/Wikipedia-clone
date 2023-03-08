@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      baseUrl: "http://172.16.99.219:3000/api",
+      baseUrl: "http://192.168.1.193:3000/api",
       appSecret: "",
     },
   },
@@ -14,6 +14,13 @@ export default defineNuxtConfig({
           rel: "stylesheet",
           type: "text/css",
           href: "/assets/css/global.css",
+        },
+      ],
+      script: [
+        {
+          src: "https://kit.fontawesome.com/712c8ec23d.js",
+          async: true,
+          crossorigin: "anonymous",
         },
       ],
     },
